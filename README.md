@@ -14,4 +14,6 @@
 
 * Tailwind
 
-* comment edit
+* Comments edit action
+
+* Deploy on Heroku
