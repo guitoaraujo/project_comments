@@ -4,9 +4,9 @@
 
 * Rails: 7.0.4.3
 
-* Bundle install
+* run `bundle install`
 
-* rails db:create db:migrate db:seed
+* run `rails db:create db:migrate db:seed`
 
 ## IMPROVEMENTS
 
@@ -15,5 +15,7 @@
 * Tailwind
 
 * Comments edit action
+
+* Hotwire
 
 * Deploy on Heroku
