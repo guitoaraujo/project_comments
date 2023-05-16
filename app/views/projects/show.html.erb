@@ -1,0 +1,13 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @project %>
+<%= render 'comments', comments: @comments %>
+
+<div>
+  <% if @project.user == current_user %>
+    <%= link_to "Edit this project", edit_project_path(@project) %>
+    <%= button_to "Destroy this project", @project, method: :delete %>
+  <% end %>
+  <br>
+  <%= link_to "Back to projects", projects_path %>
+</div>
