@@ -2,7 +2,7 @@
 
 <%= form_tag(comments_url) do %>
   <div>
-    <%= text_field_tag :text %>
+    <%= text_field_tag :text, nil, placeholder: 'Comment here...' %>
     <%= hidden_field_tag :project_id, @project.id %>
     <%= submit_tag :comment %>
   </div>
@@ -17,3 +17,4 @@
   </div>
   <br>
 <% end %>
+<br>

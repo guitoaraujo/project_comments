@@ -5,14 +5,14 @@ class CommentsController < ApplicationController
   def create
     Comment.create(comment_params)
 
-    redirect_to project_url(project_id: @project.id)
+    redirect_to project_url(id: @project.id)
   end
 
   def destroy
     comment = Comment.find(params[:id])
     comment.delete
 
-    redirect_to project_url(project_id: @project.id)
+    redirect_to project_url(id: @project.id)
   end
 
   private
