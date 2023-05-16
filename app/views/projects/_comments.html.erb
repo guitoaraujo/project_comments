@@ -1,4 +1,14 @@
-<h2>Comments - <%= comments.count %></h2>
+<h2>Comments - <%= @comments.count %></h2>
+
+<% @comments.each do |comment| %>
+  <div>
+    <%= comment.text %> - <strong><%= comment.user.email %></strong> - <%= time_ago_in_words(comment.created_at) %>
+    <% if @project.user == current_user || comment.user == current_user %> 
+      <%= link_to :delete , comment_path(id: comment.id, project_id: @project.id), data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
+    <% end %> 
+  </div>
+  <br>
+<% end %>
 
 <%= form_tag(comments_url) do %>
   <div>
@@ -6,15 +16,5 @@
     <%= hidden_field_tag :project_id, @project.id %>
     <%= submit_tag :comment %>
   </div>
-<% end %>
-
-<% comments.each do |comment| %>
-  <div>
-    <%= comment.text %> - <%= comment.user.email %> - <%= time_ago_in_words(comment.created_at) %>
-    <% if @project.user == current_user || comment.user == current_user %> 
-      <%= link_to :delete , comment_path(id: comment.id, project_id: @project.id), data: { "turbo-method": :delete, turbo_confirm: "Are you sure?" } %>
-    <% end %> 
-  </div>
-  <br>
 <% end %>
 <br>

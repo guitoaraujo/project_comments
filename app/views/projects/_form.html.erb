@@ -18,7 +18,7 @@
 
   <div>
     <%= form.label :status, style: "display: block" %>
-    <%= form.select :status, options_for_select(Project.statuses.map { |key, value| [key.humanize, Project.statuses.key(value)] })  %>
+    <%= form.select :status, options_for_select(Project.statuses.map { |key, value| [key.humanize, Project.statuses.key(value)] }, project.status)  %>
   </div>  
   <br>
   <div>

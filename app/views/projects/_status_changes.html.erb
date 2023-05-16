@@ -1,0 +1,9 @@
+<h2>Status Changes - <%= @status_changes.count %></h2>
+
+<% @status_changes.each do |change| %>
+  <div>
+    <%= change.status %> - <%= change.user.email %> - <%= time_ago_in_words(change.created_at) %>
+  </div>
+  <br>
+<% end %>
+<br>

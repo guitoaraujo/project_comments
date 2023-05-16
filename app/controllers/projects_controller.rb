@@ -9,7 +9,8 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1 or /projects/1.json
   def show
-    @comments = @project.comments.order(created_at: :desc)
+    @comments = @project.comments
+    @status_changes = @project.project_status_histories.order(created_at: :desc)
   end
 
   # GET /projects/new

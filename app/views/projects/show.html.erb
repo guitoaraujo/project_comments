@@ -1,7 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
 <%= render @project %>
-<%= render 'comments', comments: @comments %>
+<%= render 'comments' %>
+<%= render 'status_changes' %>
 
 <div>
   <% if @project.user == current_user %>
