@@ -8,6 +8,8 @@
 
 * run `rails db:create db:migrate db:seed`
 
+* You can find users login/password in `seeds.rb` file
+
 ## IMPROVEMENTS
 
 * Rspec
